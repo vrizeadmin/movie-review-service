@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>vrize.community</groupId>
-    <artifactId>movie-review-backend</artifactId>
+    <artifactId>movie-review-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>movie-review-backend</name>
-    <description>community project for movie review backend. A playground to experiment.</description>
+    <name>movie-review-service</name>
+    <description>community project for movie review service. A playground to experiment.</description>
 
 
 
@@ -92,6 +92,11 @@
             <version>1.19.8</version>
             <scope>test</scope>
         </dependency>
+		<dependency>
+		    <groupId>org.flywaydb</groupId>
+		    <artifactId>flyway-core</artifactId>
+		</dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
