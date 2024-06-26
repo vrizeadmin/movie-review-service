@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import vrize.community.moviereview.auth.token.TokenRepository;
+import vrize.community.moviereview.auth.internal.token.TokenRepository;
 
 import java.io.IOException;
 

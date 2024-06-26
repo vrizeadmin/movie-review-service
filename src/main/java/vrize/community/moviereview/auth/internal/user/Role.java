@@ -1,4 +1,4 @@
-package vrize.community.moviereview.auth.user;
+package vrize.community.moviereview.auth.internal.user;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -9,8 +9,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static vrize.community.moviereview.auth.user.Permission.*;
-
 
 @RequiredArgsConstructor
 public enum Role {
@@ -18,10 +16,10 @@ public enum Role {
     USER(Collections.emptySet()),
     ADMIN(
             Set.of(
-                    ADMIN_READ,
-                    ADMIN_UPDATE,
-                    ADMIN_DELETE,
-                    ADMIN_CREATE
+                    Permission.ADMIN_READ,
+                    Permission.ADMIN_UPDATE,
+                    Permission.ADMIN_DELETE,
+                    Permission.ADMIN_CREATE
             )
     );
 

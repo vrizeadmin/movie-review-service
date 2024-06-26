@@ -1,22 +1,18 @@
-package vrize.community.moviereview.auth.token;
+package vrize.community.moviereview.auth.internal.token;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import vrize.community.moviereview.auth.user.User;
+import vrize.community.moviereview.auth.internal.user.User;
+
+import java.util.UUID;
 
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class Token {
 
     @Id
     @GeneratedValue
-    public Integer id;
+    public UUID id;
 
     @Column(unique = true)
     public String token;

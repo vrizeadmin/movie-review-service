@@ -1,31 +1,25 @@
-package vrize.community.moviereview.auth.user;
+package vrize.community.moviereview.auth.internal.user;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.hibernate.annotations.UuidGenerator;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import vrize.community.moviereview.auth.token.Token;
+import vrize.community.moviereview.auth.internal.token.Token;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.UUID;
 
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
-@Table(name = "_user")
+@Table(name = "users")
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue
-    private Integer id;
-    private String firstname;
-    private String lastname;
-    private String email;
+    @UuidGenerator(style = UuidGenerator.Style.TIME)
+    private UUID id;
+    private String username;
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -46,7 +40,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return email;
+        return username;
     }
 
     @Override
